@@ -1,0 +1,21 @@
+{
+  "name": "condor_js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "demo": "node src/demo.js",
+    "getdeploy": "node src/legacy/getDeploy.js",
+    "legacyInstallContract": "node src/legacy/legacyInstallContract.js",
+    "legacyCallEntry": "node src/legacy/legacyCallEntry.js",
+    "installContract": "node src/V2/installContract.js",
+    "callEntry": "node src/V2/callEntry.js",
+    "getTransactionInfo": "node src/V2/getTransactionInfo.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "casper-js-sdk": "^3.0.0-rc04",
+    "esm": "^3.2.25"
+  }
+}
