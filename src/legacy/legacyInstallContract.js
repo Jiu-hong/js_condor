@@ -2,6 +2,7 @@ const casperClientSDK = require('casper-js-sdk')
 const { RuntimeArgs, DeployUtil, CLValueBuilder, CasperClient } = casperClientSDK
 const constants = require("../constants")
 
+const PATH_TO_CONTRACT = "/home/ubuntu/caspereco/cep18/v1/cep18.wasm"
 // working on 1.5
 const main = async () => {
 
@@ -17,7 +18,7 @@ const main = async () => {
         constants.ttl
     );
     const session = DeployUtil.ExecutableDeployItem.newModuleBytes(
-        constants.getBinary(constants.PATH_TO_CONTRACT),
+        constants.getBinary(PATH_TO_CONTRACT),
         RuntimeArgs.fromMap({
             name: CLValueBuilder.string("TEST7_CEP18"),
             symbol: CLValueBuilder.string("TFT"),

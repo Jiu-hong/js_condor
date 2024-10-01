@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "demo": "node src/demo.js",
-    "getdeploy": "node src/legacy/getDeploy.js",
+    "getDeploy": "node src/legacy/getDeploy.js",
     "legacyInstallContract": "node src/legacy/legacyInstallContract.js",
     "legacyCallEntry": "node src/legacy/legacyCallEntry.js",
     "installContract": "node src/V2/installContract.js",
