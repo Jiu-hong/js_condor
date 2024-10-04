@@ -9,7 +9,9 @@
     "legacyCallEntry": "node src/legacy/legacyCallEntry.js",
     "installContract": "node src/V2/installContract.js",
     "callEntry": "node src/V2/callEntry.js",
-    "getTransactionInfo": "node src/V2/getTransactionInfo.js"
+    "getTransactionInfo": "node src/V2/getTransactionInfo.js",
+    "getEntityNamedKey": "node src/V2/getEntityNamedKey.js",
+    "test": "node src/V2/test.js"
   },
   "author": "",
   "license": "ISC",

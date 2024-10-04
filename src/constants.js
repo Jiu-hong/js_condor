@@ -3,8 +3,10 @@ const fs = require("fs")
 const { Keys } = casperClientSDK
 
 
-const NETWORK_NAME = 'casper-jiuhong-test-jh-1'
-const ENDPOINT = "http://35.87.247.87:7777/rpc"
+// const NETWORK_NAME = 'casper-jiuhong-test-jh'
+// const ENDPOINT = "http://34.223.109.37:7777/rpc"
+const NETWORK_NAME = 'dev-net'
+const ENDPOINT = "http://3.14.48.188:7777/rpc"
 const KEYPATH = "/home/ubuntu/keys/test0"
 const gasPrice = 1
 const ttl = 3600000; // 1 hour

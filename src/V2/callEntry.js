@@ -1,5 +1,5 @@
 const casperClientSDK = require('casper-js-sdk')
-const { CasperServiceByJsonRPC, TransactionRuntime, TransactionInvocationTarget, CLAccountHash, decodeBase16, TransactionTarget, TransactionEntryPoint, TransactionCategoryLarge, TransactionScheduling, CLKey, CLU256, RuntimeArgs, TransactionUtil, InitiatorAddr, CLValueBuilder, CasperClient } = casperClientSDK
+const { CasperServiceByJsonRPC, TransactionRuntime, TransactionInvocationTarget, CLAccountHash, decodeBase16, TransactionTarget, TransactionEntryPoint, TransactionScheduling, CLKey, CLU256, RuntimeArgs, TransactionUtil, InitiatorAddr, CLValueBuilder, CasperClient } = casperClientSDK
 const constants = require("../constants")
 
 // working on 1.5
@@ -15,16 +15,17 @@ const main = async () => {
     });
 
     const runEndpointParams = new TransactionUtil.Version1Params(
-        InitiatorAddr.matchInitiatorAddress(edKeyPair.publicKey),
+        InitiatorAddr.InitiatorAddr.fromPublicKey(edKeyPair.publicKey),
         Date.now(),
         constants.DEFAULT_DEPLOY_TTL,
         constants.NETWORK_NAME,
         TransactionUtil.PricingMode.buildFixed(3)
     );
     const byHash = new TransactionInvocationTarget.TransactionInvocationTarget();
-    const contractHash = "cddc96120997bf805ec56a9f8aa4c031f58ea621c175b5fd9597ad6d6738f668"
+    const contractHash = "84c52e578dffd9bf39949d0d0e38c5eaa09c8299a7b2956a5bbc3c51780598c4"
 
     byHash.ByHash = decodeBase16(contractHash);
+
     const runEndpointTransaction = TransactionUtil.makeV1Transaction(
         runEndpointParams,
         transferArgs,

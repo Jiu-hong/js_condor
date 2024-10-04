@@ -1,5 +1,5 @@
 const casperClientSDK = require('casper-js-sdk')
-const { CasperServiceByJsonRPC, TransactionRuntime, TransactionInvocationTarget, CLAccountHash, decodeBase16, TransactionTarget, TransactionEntryPoint, TransactionCategoryLarge, TransactionScheduling, CLKey, CLU256, RuntimeArgs, TransactionUtil, InitiatorAddr, CLValueBuilder, CasperClient } = casperClientSDK
+const { CasperServiceByJsonRPC, TransactionRuntime, CLAccountHash, decodeBase16, TransactionTarget, TransactionEntryPoint, TransactionCategoryLarge, TransactionScheduling, CLKey, CLU256, RuntimeArgs, TransactionUtil, InitiatorAddr, CLValueBuilder, CasperClient } = casperClientSDK
 const constants = require("../constants")
 
 const PATH_TO_CONTRACT = "/home/ubuntu/caspereco/cep18/v2/cep18.wasm"
@@ -16,7 +16,7 @@ const main = async () => {
     });
 
     const runEndpointParams = new TransactionUtil.Version1Params(
-        InitiatorAddr.matchInitiatorAddress(edKeyPair.publicKey),
+        InitiatorAddr.InitiatorAddr.fromPublicKey(edKeyPair.publicKey),
         Date.now(),
         constants.DEFAULT_DEPLOY_TTL,
         constants.NETWORK_NAME,
@@ -27,7 +27,7 @@ const main = async () => {
         runEndpointParams,
         transferArgs,
         TransactionTarget.Session.build(constants.getBinary(PATH_TO_CONTRACT), TransactionRuntime.VmCasperV1),
-        TransactionEntryPoint.Call(),
+        new TransactionEntryPoint.Call(),
         new TransactionScheduling.Standard(),
         TransactionUtil.TransactionCategoryInstallUpgrade
     );
