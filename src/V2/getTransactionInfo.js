@@ -1,32 +1,17 @@
-const casperClientSDK = require('casper-js-sdk')
-const { CasperServiceByJsonRPC } = casperClientSDK
-const constants = require("../constants")
+// ok
+import pkg from 'casper-js-sdk';
+const { HttpHandler,
+    RpcClient,
+} = pkg
+import { ENDPOINT } from "../constants.js"
 
-const DEPLOY_HASH =
-    "ab8eceaec9d78cf43578350d48888eb44759f0dccdbc2c54772defd22823eac2";
+const rpcHandler = new HttpHandler(ENDPOINT);
+const rpcClient = new RpcClient(rpcHandler);
+const TRANSACTION_HASH = "f8a65cbbbc24228052388bd2f602b1f9342c791c4f205faacc7934afd2a355f9"
+const result = await rpcClient.getTransactionByTransactionHash(
+    TRANSACTION_HASH
+);
 
-const TRANSACTION_HASH = "85a533a07b476db4f3d92d44103877d81f895b48a9e63eebaace2ca9631b4aaa"
-const main = async () => {
-    const casperService = new CasperServiceByJsonRPC(constants.ENDPOINT); // mynetwork
-
-    // // working for 1.5
-    // let result_transaction = await casperService.getTransactionInfo({
-    //     Deploy:
-    //         DEPLOY_HASH
-    // })
-    // console.log(JSON.stringify(result_transaction));
-
-    // console.log("====")
-
-    // working for condor
-    let result_transaction_1 = await casperService.getTransactionInfo({
-        Version1:
-            TRANSACTION_HASH
-    })
-    console.log(JSON.stringify(result_transaction_1));
+console.log(JSON.stringify(result))
 
 
-
-};
-
-main();

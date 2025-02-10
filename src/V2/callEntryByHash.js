@@ -2,25 +2,17 @@
 import pkg from 'casper-js-sdk';
 const { HttpHandler,
     RpcClient,
-    SessionBuilder,
-    Args,
-    CLValue,
-    PublicKey
+    Args, CLValue,
+    PublicKey, ContractCallBuilder
 } = pkg;
 
-
 import { ENDPOINT, NETWORKNAME, DEFAULT_DEPLOY_TTL, PRIVATE_KEY_PATH } from "../constants.js"
-import { getBinary, getPrivateKey } from "../utils.js"
+import { getPrivateKey } from "../utils.js"
 
 const privateKey = getPrivateKey(PRIVATE_KEY_PATH)
-
-const PATH_TO_CONTRACT = "/mnt/ebs_volume/ca/js_condor/wasm/contract.wasm"
-
-
-// get private key fromHex, fromPem or generate it
-
 const rpcHandler = new HttpHandler(ENDPOINT);
 const rpcClient = new RpcClient(rpcHandler);
+
 const args = Args.fromMap({
     target: CLValue.newCLPublicKey(
         PublicKey.fromHex(
@@ -31,24 +23,20 @@ const args = Args.fromMap({
     id: CLValue.newCLOption(CLValue.newCLUint64(3))
 });
 
-const sessionWasm = new SessionBuilder()
+// 
+const contractCall = new ContractCallBuilder()
+    .byHash("48225a9815071f611fbdad400a04839077f71be4b9a3ea357feffa164a509cb6")
     .from(privateKey.publicKey)
+    .entryPoint("apple")
     .chainName(NETWORKNAME)
-    .payment(200_000_000_000)
+    .runtimeArgs(args)
     .ttl(DEFAULT_DEPLOY_TTL)
-    .wasm(getBinary(PATH_TO_CONTRACT))
-    .runtimeArgs(args);
-const transaction = sessionWasm.buildFor1_5()
+    .payment(2_000_000_000);
+const transaction = contractCall.build()
 transaction.sign(privateKey);
-console.log(JSON.stringify(transaction))
 try {
-    const result = await rpcClient.putDeploy(transaction.getDeploy());
-    console.log(`Deploy Hash: ${JSON.stringify(result.deployHash)}`);
+    const result = await rpcClient.putTransaction(transaction);
+    console.log(`Transaction Hash: ${result.transactionHash}`);
 } catch (e) {
     console.error(e);
 }
-
-
-// contract-package-3a0b52dd8e726733dbb5ab66066d911d6f156043e51a68f830c9159281af8f4c
-
-

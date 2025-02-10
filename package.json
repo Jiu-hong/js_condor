@@ -1,23 +1,25 @@
 {
   "name": "condor_js",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "demo": "node src/demo.js",
+    "transfer": "node src/V2/transfer.js",
+    "delegate": "node src/V2/delegate.js",
+    "undelegate": "node src/V2/undelegate.js",
+    "installContract": "node src/V2/installContract.js",
+    "callEntryByHash": "node src/V2/callEntryByHash.js",
+    "getTransactionInfo": "node src/V2/getTransactionInfo.js",
+    "legecy_transfer": "node src/legacy/legacy_transfer.js",
+    "legacy_transfer_1": "node src/legacy/legacy_transfer_1.js",
+    "legacy_delegate": "node src/legacy/legacy_delegate.js",
     "getDeploy": "node src/legacy/getDeploy.js",
     "legacyInstallContract": "node src/legacy/legacyInstallContract.js",
-    "legacyCallEntry": "node src/legacy/legacyCallEntry.js",
-    "installContract": "node src/V2/installContract.js",
-    "callEntry": "node src/V2/callEntry.js",
-    "getTransactionInfo": "node src/V2/getTransactionInfo.js",
-    "getEntityNamedKey": "node src/V2/getEntityNamedKey.js",
-    "test": "node src/V2/test.js"
+    "legacyCallEntry": "node src/legacy/legacyCallEntry.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "casper-js-sdk": "^3.0.0-rc04",
-    "esm": "^3.2.25"
+    "casper-js-sdk": "^v5.0.8-beta2"
   }
 }

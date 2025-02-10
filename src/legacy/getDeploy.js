@@ -1,19 +1,17 @@
-const casperClientSDK = require('casper-js-sdk')
-const { CasperClient } = casperClientSDK
-const constants = require("../constants")
+// ok
+import pkg from 'casper-js-sdk';
+const { HttpHandler,
+  RpcClient,
+} = pkg
+import { ENDPOINT } from "../constants.js"
 
-// working on 1.5
-const DEPLOY_HASH =
-    "f24aca24d9cda885212ece7cbe79c48cd48bfe573a5037a7f09186234491f0f1";
+const rpcHandler = new HttpHandler(ENDPOINT);
+const rpcClient = new RpcClient(rpcHandler);
+const DEPLOY_HASH = "e42181f5e036e5be0e389a72a4fc63b2e8049faa8026c665e7094cb50705127a"
+const result = await rpcClient.getTransactionByDeployHash(
+  DEPLOY_HASH
+);
 
-const main = async () => {
-    // const client = new CasperClient("http://3.14.48.188:7777/rpc"); //devnet
-    const client = new CasperClient(constants.ENDPOINT); // mynetwork
+console.log(JSON.stringify(result))
 
-    let deploy_result = await client.getDeploy(DEPLOY_HASH);
 
-    console.log(JSON.stringify(deploy_result[1]));
-
-};
-
-main();
