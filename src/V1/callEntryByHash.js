@@ -2,7 +2,7 @@
 import pkg from 'casper-js-sdk';
 const { HttpHandler,
     RpcClient,
-    Args, CLValue,
+    Args, CLValue, Key, KeyTypeID,
     PublicKey, ContractCallBuilder
 } = pkg;
 
@@ -14,20 +14,24 @@ const rpcHandler = new HttpHandler(ENDPOINT);
 const rpcClient = new RpcClient(rpcHandler);
 
 const args = Args.fromMap({
-    target: CLValue.newCLPublicKey(
-        PublicKey.fromHex(
-            '0202f5a92ab6da536e7b1a351406f3744224bec85d7acbab1497b65de48a1a707b64'
+    recipient: CLValue.newCLKey(
+        Key.createByType(
+            PublicKey.newPublicKey(
+                '0202f5a92ab6da536e7b1a351406f3744224bec85d7acbab1497b65de48a1a707b64'
+            )
+                .accountHash()
+                .toPrefixedString(),
+            KeyTypeID.Account
         )
     ),
-    amount: CLValue.newCLUInt512('000'),
-    id: CLValue.newCLOption(CLValue.newCLUint64(3))
+    amount: CLValue.newCLUInt256('1000000000')
 });
 
 // 
 const contractCall = new ContractCallBuilder()
-    .byHash("48225a9815071f611fbdad400a04839077f71be4b9a3ea357feffa164a509cb6")
+    .byHash("bfe3a19dab3896314c0a10173572c5b8a8e3d6846a46633c076be782bfdd68de")
     .from(privateKey.publicKey)
-    .entryPoint("apple")
+    .entryPoint("transfer")
     .chainName(NETWORKNAME)
     .runtimeArgs(args)
     .ttl(DEFAULT_DEPLOY_TTL)
