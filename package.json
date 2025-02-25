@@ -14,12 +14,15 @@
     "legacy_delegate": "node src/legacy/legacy_delegate.js",
     "getDeploy": "node src/legacy/getDeploy.js",
     "legacyInstallContract": "node src/legacy/legacyInstallContract.js",
-    "legacyCallEntry": "node src/legacy/legacyCallEntry.js"
+    "legacyCallEntry": "node src/legacy/legacyCallEntry.js",
+    "clvalue": "node src/V1/clvalue.js",
+    "clvalueKey": "node src/V1/clvalueKey.js",
+    "look": "node src/V1/toLook.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "casper-js-sdk": "^v5.0.10-beta2"
+    "casper-js-sdk": "^v5.0.11-beta2"
   }
 }
