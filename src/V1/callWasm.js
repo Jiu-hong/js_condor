@@ -5,7 +5,7 @@ const { HttpHandler,
     SessionBuilder,
     Args,
     CLValue,
-    PublicKey
+    PublicKey, AccountHash
 } = pkg;
 
 
@@ -15,20 +15,28 @@ import { getBinary, getPrivateKey } from "../utils.js"
 const privateKey = getPrivateKey(PRIVATE_KEY_PATH)
 
 // const PATH_TO_CONTRACT = "/mnt/ebs_volume/ca/js_condor/wasm/contract.wasm"
-const PATH_TO_CONTRACT = "/home/ubuntu/mywork/mycontract_condor/contract/target/wasm32-unknown-unknown/release/contract.wasm"
+const PATH_TO_CONTRACT = "/mnt/ebs_volume/ca/js_condor/wasm/add_associated_key.wasm"
 
 // get private key fromHex, fromPem or generate it
 
+// public targetAccountHash(accountHashKey: AccountHash): NativeTransferBuilder {
+//     this._target = CLValue.newCLByteArray(accountHashKey.toBytes());
+//     return this;
+//   }
 const rpcHandler = new HttpHandler(ENDPOINT);
 const rpcClient = new RpcClient(rpcHandler);
 const args = Args.fromMap({
-    target: CLValue.newCLPublicKey(
-        PublicKey.fromHex(
-            '0202f5a92ab6da536e7b1a351406f3744224bec85d7acbab1497b65de48a1a707b64'
-        )
-    ),
-    amount: CLValue.newCLUInt512('000'),
-    id: CLValue.newCLOption(CLValue.newCLUint64(3))
+    // target:
+    //     PublicKey.fromHex(
+    //         '0202f5a92ab6da536e7b1a351406f3744224bec85d7acbab1497b65de48a1a707b64'
+    //     )
+    //         .accountHash()
+    // ,
+    account: CLValue.newCLByteArray(PublicKey.fromHex(
+        '0202f5a92ab6da536e7b1a351406f3744224bec85d7acbab1497b65de48a1a707b64'
+    )
+        .accountHash().toBytes()),
+    weight: CLValue.newCLUint8(1)
 });
 
 const sessionWasm = new SessionBuilder()
@@ -37,7 +45,6 @@ const sessionWasm = new SessionBuilder()
     .payment(200_000_000_000)
     .ttl(DEFAULT_DEPLOY_TTL)
     .wasm(getBinary(PATH_TO_CONTRACT))
-    .installOrUpgrade()
     .runtimeArgs(args);
 const transaction = sessionWasm.build()
 transaction.sign(privateKey);

@@ -17,12 +17,13 @@
     "legacyCallEntry": "node src/legacy/legacyCallEntry.js",
     "clvalue": "node src/V1/clvalue.js",
     "clvalueKey": "node src/V1/clvalueKey.js",
-    "look": "node src/V1/toLook.js"
+    "look": "node src/V1/toLook.js",
+    "callwasm": "node src/V1/callWasm.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "casper-js-sdk": "^v5.0.11-beta2"
+    "casper-js-sdk": "^v5.0.13-beta2"
   }
 }

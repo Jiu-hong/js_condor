@@ -29,13 +29,14 @@ const args = Args.fromMap({
 
 // 
 const contractCall = new ContractCallBuilder()
-    .byHash("bfe3a19dab3896314c0a10173572c5b8a8e3d6846a46633c076be782bfdd68de")
+    .byHash("1ba73c6ea0ea6717779ee14ce351b30de34f28e10df1aafb304c4a6668a309df")
     .from(privateKey.publicKey)
-    .entryPoint("transfer")
+    .entryPoint("apple")
     .chainName(NETWORKNAME)
     .runtimeArgs(args)
     .ttl(DEFAULT_DEPLOY_TTL)
-    .payment(2_000_000_000);
+    .payment(0);
+// .payment(2_000_000_000);
 const transaction = contractCall.build()
 transaction.sign(privateKey);
 try {
