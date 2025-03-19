@@ -18,12 +18,13 @@
     "clvalue": "node src/V1/clvalue.js",
     "clvalueKey": "node src/V1/clvalueKey.js",
     "look": "node src/V1/toLook.js",
-    "callwasm": "node src/V1/callWasm.js"
+    "callwasm": "node src/V1/callWasm.js",
+    "contracthex": "node src/V1/contractHexCode.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "casper-js-sdk": "^v5.0.13-beta2"
+    "casper-js-sdk": "^v5.0.15-beta2"
   }
 }
