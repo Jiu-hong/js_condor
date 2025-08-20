@@ -4,7 +4,7 @@ const { HttpHandler,
     RpcClient,
     SessionBuilder,
     Args,
-    CLValue,
+    CLValue, Key, KeyTypeID,
     PublicKey, CLTypeByteArray, CLTypeUInt8
 } = pkg;
 
@@ -50,6 +50,11 @@ const args = Args.fromMap({
     owner_0: CLValue.newCLString("01d23f9a9f240b4bb6f2aaa4253c7c8f34b2be848f104a83d3d6b9b2f276be28fa"), //test0
     owner_1: CLValue.newCLString("0203c34ddd4dcddfd5c0082cadf24613597712eb92230b901089f469170b44a569a8"),
     owner_2: CLValue.newCLString("0203c34ddd4dcddfd5c0082cadf24613597712eb92230b901089f469170b44a569a8"),
+    key_bid_addr: CLValue.newCLKey((
+        Key.createByType("bid-addr-03da3cd8cc4c8f34e7731583e67ddc211ff9b5c3f2c52640582415c2cce9315b2a8af7b77811970792f98b806779dfc0d1a9fef5bad205c6be8bb884210d7d323c",
+            KeyTypeID.BidAddr
+
+        ))),
 });
 
 const sessionWasm = new SessionBuilder()
@@ -61,9 +66,10 @@ const sessionWasm = new SessionBuilder()
     .runtimeArgs(args);
 const transaction = sessionWasm.build()
 transaction.sign(privateKey);
-try {
-    const result = await rpcClient.putTransaction(transaction);
-    console.log(`Transaction Hash: ${result.transactionHash}`);
-} catch (e) {
-    console.error(e);
-}
+console.log(JSON.stringify(transaction))
+// try {
+//     const result = await rpcClient.putTransaction(transaction);
+//     console.log(`Transaction Hash: ${result.transactionHash}`);
+// } catch (e) {
+//     console.error(e);
+// }

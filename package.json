@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "transfer": "node src/V1/transfer.js",
+    "transfer1": "node src/V1/transfer_accounthash.js",
     "delegate": "node src/V1/delegate.js",
     "undelegate": "node src/V1/undelegate.js",
     "installContract": "node src/V1/installContract.js",
@@ -19,12 +20,18 @@
     "clvalueKey": "node src/V1/clvalueKey.js",
     "look": "node src/V1/toLook.js",
     "callwasm": "node src/V1/callWasm.js",
-    "contracthex": "node src/V1/contractHexCode.js"
+    "contracthex": "node src/V1/contractHexCode.js",
+    "network": "node src/V1/network.js",
+    "networkm": "node src/V1/network_mainnet.js",
+    "key_test": "node src/V1/key_test.js",
+    "allowance": "node src/V1/allownceErc20.js",
+    "nana": "node src/V1/nana.js",
+    "test": "node src/V1/test.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "casper-js-sdk": "^v5.0.15-beta2"
+    "casper-js-sdk": "^v5.0.0"
   }
 }

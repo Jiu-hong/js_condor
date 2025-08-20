@@ -1,0 +1,511 @@
+{
+    "apiVersion": "2.0.0",
+    "transaction": {
+        "approvals": [
+            {
+                "signer": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5",
+                "signature": "01a5bc894b571539c7d1098479afa9621637afe5005465ff40fc0b5e0094b6c7186413ec3c629e162b316ca3c734f11fb679edfb48cb07b53910a7d77a731b8b05"
+            }
+        ],
+        "hash": "215481282657a26010c4e169165c7064add3bf5000601e15257c4abb2fa54d41",
+        "header": {
+            "account": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5",
+            "body_hash": "ddaae2791a0b38b5bc194f3354bbbc66045487596cca893f6569ff6ae490f5b6",
+            "chain_name": "integration-test",
+            "dependencies": [],
+            "gas_price": 1,
+            "timestamp": "2025-04-03T07:24:55.946Z",
+            "ttl": "30m"
+        },
+        "payment": {
+            "ModuleBytes": {
+                "module_bytes": "",
+                "args": [
+                    [
+                        "amount",
+                        {
+                            "bytes": "0400f90295",
+                            "cl_type": "U512"
+                        }
+                    ]
+                ]
+            }
+        },
+        "session": {
+            "StoredContractByName": {
+                "name": "apple_contract",
+                "entry_point": "test2",
+                "args": [
+                    [
+                        "arg1",
+                        {
+                            "bytes": "0500000068656c6c6f01fb6d7dd568bb45bd7433498c37fabf0883f8e5700c08a6541530d3425f66f17f07",
+                            "cl_type": {
+                                "Tuple3": [
+                                    "String",
+                                    "Bool",
+                                    "URef"
+                                ]
+                            }
+                        }
+                    ],
+                    [
+                        "arg2",
+                        {
+                            "bytes": "00",
+                            "cl_type": {
+                                "Option": "String"
+                            }
+                        }
+                    ],
+                    [
+                        "arg3",
+                        {
+                            "bytes": "0a00000068656c6c6f776f726c64",
+                            "cl_type": {
+                                "Tuple1": [
+                                    "String"
+                                ]
+                            }
+                        }
+                    ],
+                    [
+                        "arg8",
+                        {
+                            "bytes": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
+                            "cl_type": "Key"
+                        }
+                    ],
+                    [
+                        "arg9",
+                        {
+                            "bytes": "010102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
+                            "cl_type": "Key"
+                        }
+                    ],
+                    [
+                        "arga",
+                        {
+                            "bytes": "020102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f2005",
+                            "cl_type": "Key"
+                        }
+                    ],
+                    [
+                        "arg4",
+                        {
+                            "bytes": "0a00000068656c6c6f776f726c6401",
+                            "cl_type": {
+                                "Tuple2": [
+                                    "String",
+                                    "Bool"
+                                ]
+                            }
+                        }
+                    ],
+                    [
+                        "arg5",
+                        {
+                            "bytes": "01000000000101",
+                            "cl_type": {
+                                "Tuple3": [
+                                    "U32",
+                                    {
+                                        "Option": "String"
+                                    },
+                                    {
+                                        "Option": "Bool"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    [
+                        "arg6",
+                        {
+                            "bytes": "02000000010500000068656c6c6f0105000000776f726c64",
+                            "cl_type": {
+                                "List": {
+                                    "Option": "String"
+                                }
+                            }
+                        }
+                    ],
+                    [
+                        "arg7",
+                        {
+                            "bytes": "040000000101040000004a696c6c0201040000004a61636b0301030000004a696d0401040000004a616e65",
+                            "cl_type": {
+                                "Map": {
+                                    "key": "U8",
+                                    "value": {
+                                        "Option": "String"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                ]
+            }
+        }
+    },
+    "executionInfo": {
+        "blockHash": "c108559becd227980017da8bb2daf3140a3d5b0dfb31138d5a1c892dc3c83cd2",
+        "blockHeight": 4844204,
+        "executionResult": {
+            "transfers": [],
+            "effects": [
+                {
+                    "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000",
+                    "kind": {
+                        "Write": {
+                            "CLValue": {
+                                "cl_type": "U512",
+                                "bytes": "0400f90295",
+                                "parsed": "2500000000"
+                            }
+                        }
+                    }
+                },
+                {
+                    "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000",
+                    "kind": {
+                        "Prune": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000"
+                    }
+                },
+                {
+                    "key": "5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                    "kind": {
+                        "Write": {
+                            "CLValue": {
+                                "cl_type": "U512",
+                                "bytes": "05e5d0840c01",
+                                "parsed": "4504998117"
+                            }
+                        }
+                    }
+                },
+                {
+                    "key": "ad35d73a3bfb3b460acef3092ad95e96bf0b582c05a2d8dc8a61b6c99f4077fb",
+                    "kind": {
+                        "AddUInt512": "2500000000"
+                    }
+                }
+            ],
+            "initiator": {
+                "PublicKey": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5"
+            },
+            "errorMessage": "No such method: test2",
+            "limit": 2500000000,
+            "consumed": 0,
+            "cost": 2500000000,
+            "sizeEstimate": 702,
+            "currentPrice": 1,
+            "refund": 0,
+            "originExecutionResultV2": {
+                "transfers": [],
+                "effects": [
+                    {
+                        "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000",
+                        "kind": {
+                            "Write": {
+                                "CLValue": {
+                                    "cl_type": "U512",
+                                    "bytes": "0400f90295",
+                                    "parsed": "2500000000"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000",
+                        "kind": {
+                            "Prune": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000"
+                        }
+                    },
+                    {
+                        "key": "5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                        "kind": {
+                            "Write": {
+                                "CLValue": {
+                                    "cl_type": "U512",
+                                    "bytes": "05e5d0840c01",
+                                    "parsed": "4504998117"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "key": "ad35d73a3bfb3b460acef3092ad95e96bf0b582c05a2d8dc8a61b6c99f4077fb",
+                        "kind": {
+                            "AddUInt512": "2500000000"
+                        }
+                    }
+                ],
+                "initiator": {
+                    "PublicKey": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5"
+                },
+                "errorMessage": "No such method: test2",
+                "limit": 2500000000,
+                "consumed": 0,
+                "refund": 0,
+                "currentPrice": 1,
+                "cost": 2500000000,
+                "sizeEstimate": 702
+            }
+        }
+    },
+    "rawJSON": {
+        "api_version": "2.0.0",
+        "transaction": {
+            "Deploy": {
+                "hash": "215481282657a26010c4e169165c7064add3bf5000601e15257c4abb2fa54d41",
+                "header": {
+                    "account": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5",
+                    "timestamp": "2025-04-03T07:24:55.946Z",
+                    "ttl": "30m",
+                    "gas_price": 1,
+                    "body_hash": "ddaae2791a0b38b5bc194f3354bbbc66045487596cca893f6569ff6ae490f5b6",
+                    "dependencies": [],
+                    "chain_name": "integration-test"
+                },
+                "payment": {
+                    "ModuleBytes": {
+                        "module_bytes": "",
+                        "args": [
+                            [
+                                "amount",
+                                {
+                                    "cl_type": "U512",
+                                    "bytes": "0400f90295",
+                                    "parsed": "2500000000"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                "session": {
+                    "StoredContractByName": {
+                        "name": "apple_contract",
+                        "entry_point": "test2",
+                        "args": [
+                            [
+                                "arg1",
+                                {
+                                    "cl_type": {
+                                        "Tuple3": [
+                                            "String",
+                                            "Bool",
+                                            "URef"
+                                        ]
+                                    },
+                                    "bytes": "0500000068656c6c6f01fb6d7dd568bb45bd7433498c37fabf0883f8e5700c08a6541530d3425f66f17f07",
+                                    "parsed": [
+                                        "hello",
+                                        true,
+                                        "uref-fb6d7dd568bb45bd7433498c37fabf0883f8e5700c08a6541530d3425f66f17f-007"
+                                    ]
+                                }
+                            ],
+                            [
+                                "arg2",
+                                {
+                                    "cl_type": {
+                                        "Option": "String"
+                                    },
+                                    "bytes": "00",
+                                    "parsed": null
+                                }
+                            ],
+                            [
+                                "arg3",
+                                {
+                                    "cl_type": {
+                                        "Tuple1": [
+                                            "String"
+                                        ]
+                                    },
+                                    "bytes": "0a00000068656c6c6f776f726c64",
+                                    "parsed": [
+                                        "helloworld"
+                                    ]
+                                }
+                            ],
+                            [
+                                "arg8",
+                                {
+                                    "cl_type": "Key",
+                                    "bytes": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
+                                    "parsed": "account-hash-0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20"
+                                }
+                            ],
+                            [
+                                "arg9",
+                                {
+                                    "cl_type": "Key",
+                                    "bytes": "010102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
+                                    "parsed": "hash-0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20"
+                                }
+                            ],
+                            [
+                                "arga",
+                                {
+                                    "cl_type": "Key",
+                                    "bytes": "020102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f2005",
+                                    "parsed": "uref-0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20-005"
+                                }
+                            ],
+                            [
+                                "arg4",
+                                {
+                                    "cl_type": {
+                                        "Tuple2": [
+                                            "String",
+                                            "Bool"
+                                        ]
+                                    },
+                                    "bytes": "0a00000068656c6c6f776f726c6401",
+                                    "parsed": [
+                                        "helloworld",
+                                        true
+                                    ]
+                                }
+                            ],
+                            [
+                                "arg5",
+                                {
+                                    "cl_type": {
+                                        "Tuple3": [
+                                            "U32",
+                                            {
+                                                "Option": "String"
+                                            },
+                                            {
+                                                "Option": "Bool"
+                                            }
+                                        ]
+                                    },
+                                    "bytes": "01000000000101",
+                                    "parsed": [
+                                        1,
+                                        null,
+                                        true
+                                    ]
+                                }
+                            ],
+                            [
+                                "arg6",
+                                {
+                                    "cl_type": {
+                                        "List": {
+                                            "Option": "String"
+                                        }
+                                    },
+                                    "bytes": "02000000010500000068656c6c6f0105000000776f726c64",
+                                    "parsed": [
+                                        "hello",
+                                        "world"
+                                    ]
+                                }
+                            ],
+                            [
+                                "arg7",
+                                {
+                                    "cl_type": {
+                                        "Map": {
+                                            "key": "U8",
+                                            "value": {
+                                                "Option": "String"
+                                            }
+                                        }
+                                    },
+                                    "bytes": "040000000101040000004a696c6c0201040000004a61636b0301030000004a696d0401040000004a616e65",
+                                    "parsed": [
+                                        {
+                                            "key": 1,
+                                            "value": "Jill"
+                                        },
+                                        {
+                                            "key": 2,
+                                            "value": "Jack"
+                                        },
+                                        {
+                                            "key": 3,
+                                            "value": "Jim"
+                                        },
+                                        {
+                                            "key": 4,
+                                            "value": "Jane"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                },
+                "approvals": [
+                    {
+                        "signer": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5",
+                        "signature": "01a5bc894b571539c7d1098479afa9621637afe5005465ff40fc0b5e0094b6c7186413ec3c629e162b316ca3c734f11fb679edfb48cb07b53910a7d77a731b8b05"
+                    }
+                ]
+            }
+        },
+        "execution_info": {
+            "block_hash": "c108559becd227980017da8bb2daf3140a3d5b0dfb31138d5a1c892dc3c83cd2",
+            "block_height": 4844204,
+            "execution_result": {
+                "Version2": {
+                    "initiator": {
+                        "PublicKey": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5"
+                    },
+                    "error_message": "No such method: test2",
+                    "current_price": 1,
+                    "limit": "2500000000",
+                    "consumed": "0",
+                    "cost": "2500000000",
+                    "refund": "0",
+                    "transfers": [],
+                    "size_estimate": 702,
+                    "effects": [
+                        {
+                            "key": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000",
+                            "kind": {
+                                "Write": {
+                                    "CLValue": {
+                                        "cl_type": "U512",
+                                        "bytes": "0400f90295",
+                                        "parsed": "2500000000"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "key": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000",
+                            "kind": {
+                                "Prune": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c070398bfa95010000"
+                            }
+                        },
+                        {
+                            "key": "balance-5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                            "kind": {
+                                "Write": {
+                                    "CLValue": {
+                                        "cl_type": "U512",
+                                        "bytes": "05e5d0840c01",
+                                        "parsed": "4504998117"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "key": "balance-ad35d73a3bfb3b460acef3092ad95e96bf0b582c05a2d8dc8a61b6c99f4077fb",
+                            "kind": {
+                                "AddUInt512": "2500000000"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

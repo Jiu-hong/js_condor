@@ -10,12 +10,12 @@ const { HttpHandler,
 
 
 import { ENDPOINT, NETWORKNAME, DEFAULT_DEPLOY_TTL, PRIVATE_KEY_PATH } from "../constants.js"
-import { getBinary, getPrivateKey } from "../utils.js"
+import { getBinary, getPrivateKey_ed25519 } from "../utils.js"
 
-const privateKey = getPrivateKey(PRIVATE_KEY_PATH)
+const privateKey = getPrivateKey_ed25519(PRIVATE_KEY_PATH)
 
 // const PATH_TO_CONTRACT = "/mnt/ebs_volume/ca/js_condor/wasm/contract.wasm"
-const PATH_TO_CONTRACT = "/home/ubuntu/mywork/mycontract_condor/contract/target/wasm32-unknown-unknown/release/contract.wasm"
+const PATH_TO_CONTRACT = "/Users/jh/caspereco/cep-78-enhanced-nft/target/wasm32-unknown-unknown/release/cep78.wasm"
 
 // get private key fromHex, fromPem or generate it
 
@@ -34,14 +34,14 @@ const args = Args.fromMap({
 const sessionWasm = new SessionBuilder()
     .from(privateKey.publicKey)
     .chainName(NETWORKNAME)
-    .payment(200_000_000_000)
+    .payment(2_000_000_000)
     .ttl(DEFAULT_DEPLOY_TTL)
     .wasm(getBinary(PATH_TO_CONTRACT))
     .installOrUpgrade()
     .runtimeArgs(args);
 const transaction = sessionWasm.build()
 transaction.sign(privateKey);
-// console.log(JSON.stringify(transaction))
+console.log(JSON.stringify(transaction))
 try {
     const result = await rpcClient.putTransaction(transaction);
     console.log(`Transaction Hash: ${result.transactionHash}`);

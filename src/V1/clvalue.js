@@ -3,8 +3,8 @@ import pkg from 'casper-js-sdk';
 const { HttpHandler,
     RpcClient,
     SessionBuilder,
-    Args,
-    CLValue, Hash,
+    Args, CLValueParser, CLTypeOption, CLTypeUInt64,
+    CLValue, Hash, CLTypeBool,
     PublicKey, URef, Conversions, UrefAccess, Key, KeyTypeID, CLTypeUInt32, CLTypeString, CLTypeInt32, CLTypeMap, CLValueMap
 } = pkg;
 
@@ -14,7 +14,7 @@ import { getBinary, getPrivateKey } from "../utils.js"
 
 const privateKey = getPrivateKey(PRIVATE_KEY_PATH)
 
-const PATH_TO_CONTRACT = "/mnt/ebs_volume/ca/js_condor/wasm/contract.wasm"
+const PATH_TO_CONTRACT = "contract.wasm"
 
 // get private key fromHex, fromPem or generate it
 
@@ -41,7 +41,11 @@ const myURef = URef.fromString(formattedStr);
 // const clValue = new CLValue(mapType);
 // clValue.map = new CLValueMap(mapType);
 
+const resultOk = CLValue.newCLResult(CLTypeBool, CLTypeInt32, CLValue.newCLInt32(123), false)
+const option2 = CLValue.newCLOption(resultOk)
+
 const args = Args.fromMap({
+    option2: option2,
     bool: CLValue.newCLValueBool(true),
     // // i32: CLValueInt32;
     i32: CLValue.newCLInt32(123),
@@ -94,6 +98,13 @@ const args = Args.fromMap({
         CLValue.newCLUInt32(3),
         CLValue.newCLUInt32(3)
     ]),
+    list2: CLValue.newCLList(new CLTypeOption(CLTypeUInt64), [
+        CLValue.newCLOption(CLValue.newCLUint64(1)),
+        CLValue.newCLOption(CLValue.newCLUint64(2)),
+        CLValue.newCLOption(CLValue.newCLUint64(3)),
+        CLValue.newCLOption(CLValue.newCLUint64(3)),
+        CLValue.newCLOption(CLValue.newCLUint64(3))
+    ]),
     // public byteArray?: CLValueByteArray;
     byteArray: CLValue.newCLByteArray(Uint8Array.from([1, 2, 3])),
     // public result?: CLValueResult;
@@ -103,8 +114,8 @@ const args = Args.fromMap({
     //     value: CLValue,
     //     isSuccess: boolean
     //   )
-    resultOk: CLValue.newCLResult(CLTypeString, CLTypeInt32, CLValue.newCLUInt32(123), false),
-    resultErr: CLValue.newCLResult(CLTypeString, CLTypeInt32, CLValue.newCLString('ABC'), true),
+    resultOk: CLValue.newCLResult(CLTypeBool, CLTypeInt32, CLValue.newCLInt32(123), false),
+    resultErr: CLValue.newCLResult(CLTypeString, CLTypeBool, CLValue.newCLString('ABC'), true),
     // public stringVal?: CLValueString;
     stringVal: CLValue.newCLString('ABC'),
     // public map?: CLValueMap;
@@ -117,6 +128,10 @@ const args = Args.fromMap({
     tuple3: CLValue.newCLTuple3(CLValue.newCLInt32(555),
         CLValue.newCLString('ABC'),
         CLValue.newCLString('XYZ')),
+    option1: CLValue.newCLOption(CLValue.newCLTuple3(CLValue.newCLInt32(555),
+        CLValue.newCLString('ABC'),
+        CLValue.newCLString('XYZ'))),
+    option11: CLValue.newCLOption(null, CLTypeUInt64),
     // public any?: CLValueAny;
     any: CLValue.newCLAny(new Uint8Array([13, 13])),
     // public publicKey?: PublicKey;
@@ -127,10 +142,11 @@ const args = Args.fromMap({
     ),
 });
 
+
 const sessionWasm = new SessionBuilder()
     .from(privateKey.publicKey)
     .chainName(NETWORKNAME)
-    .payment(1_000_000_000)
+    .payment(3_000_000_000)
     .ttl(DEFAULT_DEPLOY_TTL)
     .wasm(getBinary(PATH_TO_CONTRACT))
     .installOrUpgrade()

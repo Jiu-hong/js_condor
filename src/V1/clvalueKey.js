@@ -105,6 +105,7 @@ const args = Args.fromMap({
             KeyTypeID.Bid
 
         ))),
+
     // unbond-2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a
     key_Unbond: CLValue.newCLKey((
         Key.createByType("unbond-2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a",
@@ -123,6 +124,13 @@ const args = Args.fromMap({
             KeyTypeID.BidAddr
 
         ))),
+    // key_bid_addr: CLValue.newCLKey((
+    //     Key.createByType("bid-addr-03da3cd8cc4c8f34e7731583e67ddc211ff9b5c3f2c52640582415c2cce9315b2a8af7b77811970792f98b806779dfc0d1a9fef5bad205c6be8bb884210d7d323c",
+    //         KeyTypeID.BidAddr
+
+    //     ))),
+    // //    "bid-addr-03da3cd8cc4c8f34e7731583e67ddc211ff9b5c3f2c52640582415c2cce9315b2a8af7b77811970792f98b806779dfc0d1a9fef5bad205c6be8bb884210d7d323c")
+
     // dictionary-2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a
     key_dictionary: CLValue.newCLKey((
         Key.createByType("dictionary-2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a",
@@ -175,7 +183,7 @@ const args = Args.fromMap({
 const sessionWasm = new SessionBuilder()
     .from(privateKey.publicKey)
     .chainName(NETWORKNAME)
-    .payment(1_000_000_000)
+    .payment(2_500_000_000)
     .ttl(DEFAULT_DEPLOY_TTL)
     .wasm(getBinary(PATH_TO_CONTRACT))
     .installOrUpgrade()

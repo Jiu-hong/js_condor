@@ -11,9 +11,9 @@ const {
 } = pkg;
 
 import { ENDPOINT, NETWORKNAME, PRIVATE_KEY_PATH } from "../constants.js"
-import { getPrivateKey } from "../utils.js"
+import { getPrivateKey_ed25519 } from "../utils.js"
 
-const senderKey = getPrivateKey(PRIVATE_KEY_PATH)
+const senderKey = getPrivateKey_ed25519(PRIVATE_KEY_PATH)
 
 const rpcHandler = new HttpHandler(ENDPOINT);
 const rpcClient = new RpcClient(rpcHandler);

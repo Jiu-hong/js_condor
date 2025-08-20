@@ -1,13 +1,20 @@
 
-
-const ENDPOINT = 'http://node.integration.casper.network:7777/rpc'
-const NETWORKNAME = 'integration-test'
+// const ENDPOINT = 'https://node.testnet.casper.network/rpc'
+// const NETWORKNAME = 'casper-test'
+const ENDPOINT = 'http://34.210.119.4:7777/rpc'
+const NETWORKNAME = 'casper-custom'
+// const ENDPOINT = 'https://node.mainnet.casper.network/rpc'
+// const NETWORKNAME = 'casper'
+// const ENDPOINT = 'http://node.integration.casper.network:7777/rpc'
+// const NETWORKNAME = 'integration-test'
 // const NETWORKNAME = 'casper-test-jh'
 // const ENDPOINT = "http://172.31.30.160:7777/rpc"
 // const NETWORK_NAME = 'dev-net'
 // const ENDPOINT = "http://3.14.48.188:7777/rpc"
 // const PRIVATE_KEY_PATH = "/home/ubuntu/keys/mynetwork/secret_key.pem"
-const PRIVATE_KEY_PATH = "/home/ubuntu/keys/test98/secret_key.pem"
+// const PRIVATE_KEY_PATH = "/home/ubuntu/keys/test98/secret_key.pem"
+// const PRIVATE_KEY_PATH = "/Users/jh/keys/test99/secret_key.pem"
+const PRIVATE_KEY_PATH = "/Users/jh/keys/test0/secret_key.pem"
 // const PRIVATE_KEY_PATH = "/mnt/ebs_volume/ca/js_condor/secret_key.pem"
 const gasPrice = 1
 const ttl = 3600000; // 1 hour

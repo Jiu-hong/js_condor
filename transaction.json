@@ -1,0 +1,404 @@
+{
+    "apiVersion": "2.0.0",
+    "transaction": {
+        "hash": "9bff61e4e119409eee9ae0565ee6a147f8fc8ddea221704d21318ba3b64e6984",
+        "payload": {
+            "initiator_addr": {
+                "PublicKey": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5"
+            },
+            "timestamp": "2025-04-03T08:30:15.449Z",
+            "ttl": "30m",
+            "pricing_mode": {
+                "PaymentLimited": {
+                    "gas_price_tolerance": 1,
+                    "payment_amount": 100000000,
+                    "standard_payment": true
+                }
+            },
+            "chain_name": "integration-test",
+            "fields": {
+                "args": {
+                    "Named": [
+                        [
+                            "target",
+                            {
+                                "bytes": "01bb63a712307a193309f181820a10ac8287dc3c853a659e0b5220f7f7732c8c61",
+                                "cl_type": "PublicKey"
+                            }
+                        ],
+                        [
+                            "amount",
+                            {
+                                "bytes": "0400f90295",
+                                "cl_type": "U512"
+                            }
+                        ]
+                    ]
+                },
+                "target": "Native",
+                "entry_point": "Transfer",
+                "scheduling": "Standard"
+            }
+        },
+        "approvals": [
+            {
+                "signer": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5",
+                "signature": "0164898d758b325f502ff013097037a873f529331870a689673a3b5ee458ac7204d8d2f06036dcce979f05173df8cb1f1a8479a9561db12a11956e56ecc6bbb107"
+            }
+        ]
+    },
+    "executionInfo": {
+        "blockHash": "0f95112447a63469ebc67540514737d547d4b6ef0d0853779fbc38b8ef8625a8",
+        "blockHeight": 4844441,
+        "executionResult": {
+            "transfers": [
+                {
+                    "amount": "2500000000",
+                    "transactionHash": {
+                        "transactionV1": "9bff61e4e119409eee9ae0565ee6a147f8fc8ddea221704d21318ba3b64e6984"
+                    },
+                    "from": {
+                        "AccountHash": "account-hash-e039443624491a1400b3b02770137b3058d89f34e21c426592c775c668cb1e6d"
+                    },
+                    "gas": 100000000,
+                    "source": "uref-5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0-007",
+                    "target": "uref-13125921f0b687c742d2ea7d6a789ae5841507cb3e0f4d230c73409f6c2bcfb6-004",
+                    "to": "account-hash-b9787627c7e865d754730d2cddf681a75dec70bc7b44e6ebfa44c81bd6c5b4bd",
+                    "originTransferV2": {
+                        "amount": "2500000000",
+                        "transactionHash": {
+                            "transactionV1": "9bff61e4e119409eee9ae0565ee6a147f8fc8ddea221704d21318ba3b64e6984"
+                        },
+                        "from": {
+                            "AccountHash": "account-hash-e039443624491a1400b3b02770137b3058d89f34e21c426592c775c668cb1e6d"
+                        },
+                        "gas": 100000000,
+                        "source": "uref-5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0-007",
+                        "target": "uref-13125921f0b687c742d2ea7d6a789ae5841507cb3e0f4d230c73409f6c2bcfb6-004",
+                        "to": "account-hash-b9787627c7e865d754730d2cddf681a75dec70bc7b44e6ebfa44c81bd6c5b4bd"
+                    }
+                }
+            ],
+            "effects": [
+                {
+                    "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                    "kind": {
+                        "Write": {
+                            "CLValue": {
+                                "cl_type": "U512",
+                                "bytes": "0400e1f505",
+                                "parsed": "100000000"
+                            }
+                        }
+                    }
+                },
+                {
+                    "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                    "kind": "Identity"
+                },
+                {
+                    "key": "5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                    "kind": {
+                        "Write": {
+                            "CLValue": {
+                                "cl_type": "U512",
+                                "bytes": "04e5d78177",
+                                "parsed": "2004998117"
+                            }
+                        }
+                    }
+                },
+                {
+                    "key": "13125921f0b687c742d2ea7d6a789ae5841507cb3e0f4d230c73409f6c2bcfb6",
+                    "kind": {
+                        "AddUInt512": "2500000000"
+                    }
+                },
+                {
+                    "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                    "kind": {
+                        "Prune": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000"
+                    }
+                },
+                {
+                    "key": "5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                    "kind": {
+                        "Write": {
+                            "CLValue": {
+                                "cl_type": "U512",
+                                "bytes": "04e5f68b71",
+                                "parsed": "1904998117"
+                            }
+                        }
+                    }
+                },
+                {
+                    "key": "e72205001e72c43810c54094b8c1d51fa56450a928df5296a523eeb1524e437b",
+                    "kind": {
+                        "AddUInt512": "100000000"
+                    }
+                }
+            ],
+            "initiator": {
+                "PublicKey": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5"
+            },
+            "errorMessage": null,
+            "limit": 100000000,
+            "consumed": 100000000,
+            "cost": 100000000,
+            "sizeEstimate": 483,
+            "currentPrice": 1,
+            "refund": 0,
+            "originExecutionResultV2": {
+                "transfers": [
+                    {
+                        "amount": "2500000000",
+                        "transactionHash": {
+                            "transactionV1": "9bff61e4e119409eee9ae0565ee6a147f8fc8ddea221704d21318ba3b64e6984"
+                        },
+                        "from": {
+                            "AccountHash": "account-hash-e039443624491a1400b3b02770137b3058d89f34e21c426592c775c668cb1e6d"
+                        },
+                        "gas": 100000000,
+                        "source": "uref-5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0-007",
+                        "target": "uref-13125921f0b687c742d2ea7d6a789ae5841507cb3e0f4d230c73409f6c2bcfb6-004",
+                        "to": "account-hash-b9787627c7e865d754730d2cddf681a75dec70bc7b44e6ebfa44c81bd6c5b4bd",
+                        "originTransferV2": {
+                            "amount": "2500000000",
+                            "transactionHash": {
+                                "transactionV1": "9bff61e4e119409eee9ae0565ee6a147f8fc8ddea221704d21318ba3b64e6984"
+                            },
+                            "from": {
+                                "AccountHash": "account-hash-e039443624491a1400b3b02770137b3058d89f34e21c426592c775c668cb1e6d"
+                            },
+                            "gas": 100000000,
+                            "source": "uref-5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0-007",
+                            "target": "uref-13125921f0b687c742d2ea7d6a789ae5841507cb3e0f4d230c73409f6c2bcfb6-004",
+                            "to": "account-hash-b9787627c7e865d754730d2cddf681a75dec70bc7b44e6ebfa44c81bd6c5b4bd"
+                        }
+                    }
+                ],
+                "effects": [
+                    {
+                        "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                        "kind": {
+                            "Write": {
+                                "CLValue": {
+                                    "cl_type": "U512",
+                                    "bytes": "0400e1f505",
+                                    "parsed": "100000000"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                        "kind": "Identity"
+                    },
+                    {
+                        "key": "5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                        "kind": {
+                            "Write": {
+                                "CLValue": {
+                                    "cl_type": "U512",
+                                    "bytes": "04e5d78177",
+                                    "parsed": "2004998117"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "key": "13125921f0b687c742d2ea7d6a789ae5841507cb3e0f4d230c73409f6c2bcfb6",
+                        "kind": {
+                            "AddUInt512": "2500000000"
+                        }
+                    },
+                    {
+                        "key": "015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                        "kind": {
+                            "Prune": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000"
+                        }
+                    },
+                    {
+                        "key": "5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                        "kind": {
+                            "Write": {
+                                "CLValue": {
+                                    "cl_type": "U512",
+                                    "bytes": "04e5f68b71",
+                                    "parsed": "1904998117"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "key": "e72205001e72c43810c54094b8c1d51fa56450a928df5296a523eeb1524e437b",
+                        "kind": {
+                            "AddUInt512": "100000000"
+                        }
+                    }
+                ],
+                "initiator": {
+                    "PublicKey": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5"
+                },
+                "errorMessage": null,
+                "limit": 100000000,
+                "consumed": 100000000,
+                "refund": 0,
+                "currentPrice": 1,
+                "cost": 100000000,
+                "sizeEstimate": 483
+            }
+        }
+    },
+    "rawJSON": {
+        "api_version": "2.0.0",
+        "transaction": {
+            "Version1": {
+                "hash": "9bff61e4e119409eee9ae0565ee6a147f8fc8ddea221704d21318ba3b64e6984",
+                "payload": {
+                    "initiator_addr": {
+                        "PublicKey": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5"
+                    },
+                    "timestamp": "2025-04-03T08:30:15.449Z",
+                    "ttl": "30m",
+                    "chain_name": "integration-test",
+                    "pricing_mode": {
+                        "PaymentLimited": {
+                            "payment_amount": 100000000,
+                            "gas_price_tolerance": 1,
+                            "standard_payment": true
+                        }
+                    },
+                    "fields": {
+                        "args": {
+                            "Named": [
+                                [
+                                    "target",
+                                    {
+                                        "cl_type": "PublicKey",
+                                        "bytes": "01bb63a712307a193309f181820a10ac8287dc3c853a659e0b5220f7f7732c8c61",
+                                        "parsed": "01bb63a712307a193309f181820a10ac8287dc3c853a659e0b5220f7f7732c8c61"
+                                    }
+                                ],
+                                [
+                                    "amount",
+                                    {
+                                        "cl_type": "U512",
+                                        "bytes": "0400f90295",
+                                        "parsed": "2500000000"
+                                    }
+                                ]
+                            ]
+                        },
+                        "entry_point": "Transfer",
+                        "scheduling": "Standard",
+                        "target": "Native"
+                    }
+                },
+                "approvals": [
+                    {
+                        "signer": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5",
+                        "signature": "0164898d758b325f502ff013097037a873f529331870a689673a3b5ee458ac7204d8d2f06036dcce979f05173df8cb1f1a8479a9561db12a11956e56ecc6bbb107"
+                    }
+                ]
+            }
+        },
+        "execution_info": {
+            "block_hash": "0f95112447a63469ebc67540514737d547d4b6ef0d0853779fbc38b8ef8625a8",
+            "block_height": 4844441,
+            "execution_result": {
+                "Version2": {
+                    "initiator": {
+                        "PublicKey": "017e037b8b5621b9803cad20c2d85aca9b5028c5ee5238923bb4a8fc5131d539f5"
+                    },
+                    "error_message": null,
+                    "current_price": 1,
+                    "limit": "100000000",
+                    "consumed": "100000000",
+                    "cost": "100000000",
+                    "refund": "0",
+                    "transfers": [
+                        {
+                            "Version2": {
+                                "transaction_hash": {
+                                    "Version1": "9bff61e4e119409eee9ae0565ee6a147f8fc8ddea221704d21318ba3b64e6984"
+                                },
+                                "from": {
+                                    "AccountHash": "account-hash-e039443624491a1400b3b02770137b3058d89f34e21c426592c775c668cb1e6d"
+                                },
+                                "to": "account-hash-b9787627c7e865d754730d2cddf681a75dec70bc7b44e6ebfa44c81bd6c5b4bd",
+                                "source": "uref-5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0-007",
+                                "target": "uref-13125921f0b687c742d2ea7d6a789ae5841507cb3e0f4d230c73409f6c2bcfb6-004",
+                                "amount": "2500000000",
+                                "gas": "100000000",
+                                "id": null
+                            }
+                        }
+                    ],
+                    "size_estimate": 483,
+                    "effects": [
+                        {
+                            "key": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                            "kind": {
+                                "Write": {
+                                    "CLValue": {
+                                        "cl_type": "U512",
+                                        "bytes": "0400e1f505",
+                                        "parsed": "100000000"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "key": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                            "kind": "Identity"
+                        },
+                        {
+                            "key": "balance-5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                            "kind": {
+                                "Write": {
+                                    "CLValue": {
+                                        "cl_type": "U512",
+                                        "bytes": "04e5d78177",
+                                        "parsed": "2004998117"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "key": "balance-13125921f0b687c742d2ea7d6a789ae5841507cb3e0f4d230c73409f6c2bcfb6",
+                            "kind": {
+                                "AddUInt512": "2500000000"
+                            }
+                        },
+                        {
+                            "key": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000",
+                            "kind": {
+                                "Prune": "balance-hold-015c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0b17ac6fa95010000"
+                            }
+                        },
+                        {
+                            "key": "balance-5c140dd0a3d1445387013f59318109146ed6d25bb2208b11de508b002253a4c0",
+                            "kind": {
+                                "Write": {
+                                    "CLValue": {
+                                        "cl_type": "U512",
+                                        "bytes": "04e5f68b71",
+                                        "parsed": "1904998117"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "key": "balance-e72205001e72c43810c54094b8c1d51fa56450a928df5296a523eeb1524e437b",
+                            "kind": {
+                                "AddUInt512": "100000000"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
