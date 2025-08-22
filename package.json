@@ -25,6 +25,7 @@
     "networkm": "node src/V1/network_mainnet.js",
     "key_test": "node src/V1/key_test.js",
     "allowance": "node src/V1/allownceErc20.js",
+    "balance": "node src/V1/balanceErc20.js",
     "nana": "node src/V1/nana.js",
     "test": "node src/V1/test.js"
   },

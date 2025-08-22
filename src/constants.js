@@ -1,7 +1,7 @@
 
 // const ENDPOINT = 'https://node.testnet.casper.network/rpc'
 // const NETWORKNAME = 'casper-test'
-const ENDPOINT = 'http://34.210.119.4:7777/rpc'
+const ENDPOINT = 'http://34.222.193.169:7777/rpc'
 const NETWORKNAME = 'casper-custom'
 // const ENDPOINT = 'https://node.mainnet.casper.network/rpc'
 // const NETWORKNAME = 'casper'
